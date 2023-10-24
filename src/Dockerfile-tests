@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+WORKDIR /app
+COPY ./cron-parser.tests ./cron-parser.tests
+COPY ./cron-parser.console ./cron-parser.console
+
+WORKDIR /app/cron-parser.tests
+CMD dotnet restore && dotnet clean && dotnet test
